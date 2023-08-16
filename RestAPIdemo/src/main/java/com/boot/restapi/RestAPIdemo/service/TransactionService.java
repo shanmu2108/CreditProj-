@@ -1,6 +1,9 @@
 package com.boot.restapi.RestAPIdemo.service;
 
 
+import com.boot.restapi.RestAPIdemo.dto.GenderAmount;
+import com.boot.restapi.RestAPIdemo.dto.JobAmount;
+import com.boot.restapi.RestAPIdemo.dto.MerchantAmount;
 import com.boot.restapi.RestAPIdemo.dto.StateAmount;
 import com.boot.restapi.RestAPIdemo.entity.Customer;
 import com.boot.restapi.RestAPIdemo.entity.Transactions;
@@ -60,7 +63,13 @@ public class TransactionService {
     public List<StateAmount> getAmountForCountry(){
         return template.getAmountForCountry();
     }
-
+    public List<GenderAmount> getAmountForGender(){
+        return template.getAmountForGender();
+    }public List<JobAmount> getAmountForJob(){
+        return template.getAmountForJob();
+    }public List<MerchantAmount> getAmountForMerchant(){
+        return template.getAmountForMerchant();
+    }
 
 
  }

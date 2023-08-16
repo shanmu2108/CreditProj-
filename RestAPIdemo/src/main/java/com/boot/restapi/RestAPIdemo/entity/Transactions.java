@@ -26,6 +26,7 @@ public class Transactions {
     private String first;
     private String last;
     private String gender;
+    @Field("Job")
     private String job;
     private String dob;
 

@@ -1,5 +1,8 @@
 package com.boot.restapi.RestAPIdemo.controller;
 
+import com.boot.restapi.RestAPIdemo.dto.GenderAmount;
+import com.boot.restapi.RestAPIdemo.dto.JobAmount;
+import com.boot.restapi.RestAPIdemo.dto.MerchantAmount;
 import com.boot.restapi.RestAPIdemo.dto.StateAmount;
 import com.boot.restapi.RestAPIdemo.entity.Customer;
 import com.boot.restapi.RestAPIdemo.entity.Transactions;
@@ -68,6 +71,16 @@ public class TransactionsRestController {
     @GetMapping("getByStateAmount")
     public ResponseEntity<List<StateAmount>> getByStateAmount(){
         return ResponseEntity.ok(transactionService.getAmountForCountry());
+    }
+    @GetMapping("getByGenderAmount")
+    public ResponseEntity<List<GenderAmount>> getByGenderAmount(){
+        return ResponseEntity.ok(transactionService.getAmountForGender());
+    }@GetMapping("getByJobAmount")
+    public ResponseEntity<List<JobAmount>> getByJobAmount(){
+        return ResponseEntity.ok(transactionService.getAmountForJob());
+    }@GetMapping("getByMerchantAmount")
+    public ResponseEntity<List<MerchantAmount>> getByMerchantAmount(){
+        return ResponseEntity.ok(transactionService.getAmountForMerchant());
     }
 
 //    @DeleteMapping("deleteEmployeeById/{customerId}")
