@@ -52,7 +52,7 @@ public class TransactionService {
         updatedtransaction.setCustomer_id(transactions.getCustomer_id());
         updatedtransaction.setTrans_date_trans_time(transactions.getTrans_date_trans_time());
         transactionsRepository.save(updatedtransaction);
-        return updatedtransaction;
+        return transactions;
     }
     public List<Transactions> getTransactionsInAmountRange(double from, double to){
         return this.transactionsRepository.findTransactionsInAmountRange(from,to);

@@ -1,6 +1,7 @@
 package com.boot.restapi.RestAPIdemo;
 
 import com.boot.restapi.RestAPIdemo.entity.Customer;
+import com.boot.restapi.RestAPIdemo.entity.Transactions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -19,26 +20,26 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-public class CustomerControllerSpec {
+public class TransactionsControllerSpec {
     @Autowired
     TestRestTemplate template;
     @Test
-    public void findAllCustomersTest(){
-        ResponseEntity<List<Customer>> response= template.exchange("/Customer/findAllCustomers",
+    public void findAllTransactionsTest(){
+        ResponseEntity<List<Transactions>> response= template.exchange("/Transactions/findAllTransactions",
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<Customer>>() {});
-        List<Customer> rescus=response.getBody();
-        assertEquals(987,rescus.size());
+                new ParameterizedTypeReference<List<Transactions>>() {});
+        List<Transactions> rescus=response.getBody();
+        assertEquals(1048575,rescus.size());
         assertEquals(HttpStatus.OK,response.getStatusCode());
 
     }
     @Test //Vetri
-    public void addCustomerControllerTest() throws ParseException, URISyntaxException {
+    public void addTransactionControllerTest() throws ParseException, URISyntaxException {
         TestRestTemplate template1 =new TestRestTemplate();
-        URI uri = new URI("http://localhost:8080/Customer/addCustomerController");
-        Customer customer1=new Customer("hi1","hello","M","Cook",new SimpleDateFormat("dd/MM/yyyy").parse("01/01/1970"),986);
-        ResponseEntity<Customer> response = template1.postForEntity(uri,customer1,Customer.class);
-         assertEquals("hi1",response.getBody().getFirst());
+        URI uri = new URI("http://localhost:8080/Transactions/addTransactionController");
+        Transactions transactions1=new Transactions("23/02/2020 21:38",40.1,1900001,891,"Chennai","TN",12465,"Aachi","Food","hi","hello","F","Salesman","27/05/1993");
+        ResponseEntity<Transactions> response = template1.postForEntity(uri,transactions1,Transactions.class);
+        assertEquals(1900001,response.getBody().getTrans_num());
     }
 }

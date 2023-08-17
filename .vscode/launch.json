@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "RestApIdemoApplication",
+            "request": "launch",
+            "mainClass": "com.boot.restapi.RestAPIdemo.RestApIdemoApplication",
+            "projectName": "RestAPIdemo"
+        },
+        {
+            "type": "node-terminal",
+            "name": "JavaScript Debug Terminal",
+            "request": "launch",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

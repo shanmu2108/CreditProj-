@@ -13,13 +13,24 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class RestApIdemoApplication {
 	public static final Logger LOGGER= LoggerFactory.getLogger(RestApIdemoApplication.class);
 	public static void main(String[] args) {
-//		ConfigurableApplicationContext context = SpringApplication.run(RestApIdemoApplication.class, args);
-//		//CustomerService customerService=context.getBean(CustomerService.class);
-//		TransactionService transactionService=context.getBean(TransactionService.class);
-//		for (Transactions transactions: transactionService.getTransactionsInAmountRange(25,26)){
-//		System.out.println(transactions);}
 		SpringApplication.run(RestApIdemoApplication.class, args);
 		LOGGER.info("Simple log {}{}{}","d1","d2","d3" );
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+//		ConfigurableApplicationContext context = SpringApplication.run(RestApIdemoApplication.class, args);
+//		//CustomerService customerService=context.getBean(CustomerService.class);
+//		TransactionService transactionService=context.getBean(TransactionService.class);
+//		for (Transactions transactions: transactionService.getTransactionsInAmountRange(25,26)){
+//		System.out.println(transactions);}
